@@ -9,7 +9,8 @@ init: {
 }
 }%%
 
-graph LR
+flowchart LR
+
 
 subgraph Coin Chest
 coin[Coin] --> coin_chest[Coin Chest]
@@ -32,7 +33,32 @@ stone[Stone] --> house
 villager[Villager] --> house
 end 
 
+%% fix
+subgraph Offspring
+house --> offspring[Offspring]
+villager[Villager] -->|2x| offspring
+end
+
+subgraph Resource Chest
+plank[Plank] -->|2x| resource_chest[Resource Chest]
+iron_bar[Iron Bar] --> resource_chest
+flint[Flint] --> resource_chest
+end
+
+subgraph Stick
+wood --> stick[Stick]
+villager --> stick
+end
+
+subgraph Temple
+plank -->|5x| temple[Temple]
+brick[Brick] -->|5x| temple
+iron_bar -->|3x| temple
+villager -->|3x| temple
+end
 
 
+linkStyle 16,18,19 stroke:red;
+linkStyle 14,15 stroke:green;
 
 ```
