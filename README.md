@@ -21,6 +21,18 @@ campfire[Campfire] --> cooked_meat[Cooked Meat]
 raw_meat[Raw Meat] --> cooked_meat
 end
 
+subgraph Growth
+berry[Berry] --> growth[Growth]
+soil[Soil] --> growth
+end
+
+subgraph House
+wood -->|2x| house[House]
+stone[Stone] --> house
+villager[Villager] --> house
+end 
+
+
 
 
 ```
